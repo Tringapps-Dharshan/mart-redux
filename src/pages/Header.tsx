@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import { useAppSelector } from '../redux/hooks'
-import { Button } from '@mui/material'
+import { Avatar, Button } from '@mui/material'
 import './Header.scss'
 import PreviewBackdrop from '../sharedpages/PreviewBackdrop'
 interface Product {
@@ -49,12 +49,20 @@ const Header = () => {
                             </Button>
                         )
                     }
-                    <PreviewBackdrop open={open} setOpen={setOpen} user={user}/>
+                    <PreviewBackdrop open={open} setOpen={setOpen} user={user} />
                 </div>
             </div>
             <div className='header-part'>
                 {
-                    retailer_details.map((data) => <div className='part'>{data.name}</div>)
+                    retailer_details.map((data) =>
+                        <div className='part'>
+                            <div className="part-header">
+                                <Avatar className='part-avatar' sx={{ bgcolor: 'white', color: '#000', fontWeight:'700'}}>
+                                    {data.name[0]}
+                                </Avatar>
+                                {data.name}, {data.address}
+                            </div>
+                        </div>)
                 }
             </div>
         </div>

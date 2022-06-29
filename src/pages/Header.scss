@@ -1,15 +1,15 @@
-.part{
-    height: 93vh;
+.part {
+    height: 88.5vh;
     width: 100vw;
-    background-color: bisque;
+    background-color: ghostwhite;
 }
 
-.header-part{
+.header-part {
     display: flex;
 }
 
-.header-button{
-    height: 7vh;
+.header-button {
+    height: 10vh;
     background-color: #333;
     align-items: center;
     display: flex;
@@ -17,6 +17,20 @@
     padding: 5px 50px;
 }
 
-.header-text{
+.header-text {
     color: white;
+}
+
+.part-header {
+    padding: 15px;
+    font-size: larger;
+    text-align: left;
+    display: flex;
+    align-items: center;
+    background-color: blueviolet;
+    color: whitesmoke;
+}
+
+.part-avatar {
+    margin: 0 15px;
 }
