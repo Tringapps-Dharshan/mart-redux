@@ -1,0 +1,29 @@
+.content {
+    padding: 10px 20px;
+}
+
+.box-header {
+    display: flex;
+    align-items: center;
+    padding: 5px;
+    border-bottom: lightslategray solid 1px;
+    background-color: #333;
+    color: white;
+}
+
+.cus-name {
+    font-size: 20px;
+}
+
+.box-content {
+    padding: 20px;
+    background-color: lightgray;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.cus-action {
+    float: right;
+    padding: 20px;
+}

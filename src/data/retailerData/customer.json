@@ -1,0 +1,20 @@
+[
+    {
+        "id": 1,
+        "name": "Karthick",
+        "products": [],
+        "address": "Madurai"
+    },
+    {
+        "id": 2,
+        "name": "Dharshan",
+        "products": [],
+        "address": "Madurai"
+    },
+    {
+        "id": 3,
+        "name": "Bhavesh",
+        "products": [],
+        "address": "Madurai"
+    }
+]

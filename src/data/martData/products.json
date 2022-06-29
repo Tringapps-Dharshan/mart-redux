@@ -1,0 +1,19 @@
+[{
+    "product_id": 1,
+    "product_name": "Milk 1 Litre",
+    "product_price": 48,
+    "product_inStock": 20
+},
+{
+    "product_id": 2,
+    "product_name": "Bread",
+    "product_price": 30,
+    "product_inStock": 20
+},
+{
+    "product_id": 3,
+    "product_name": "Jam",
+    "product_price": 20,
+    "product_inStock": 20
+}
+]
