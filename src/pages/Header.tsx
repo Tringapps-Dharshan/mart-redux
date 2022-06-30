@@ -1,8 +1,9 @@
 import { useState } from 'react'
 import { useAppSelector } from '../redux/hooks'
-import { Avatar, Button } from '@mui/material'
+import { Button } from '@mui/material'
 import './Header.scss'
 import PreviewBackdrop from '../sharedpages/PreviewBackdrop'
+import { DisplayRetailer } from './RetailerDetails/DisplayRetailer'
 interface Product {
     id: string,
     name: string,
@@ -29,8 +30,6 @@ const Header = () => {
     const displayOverlay: displayOverlays = (i) => {
         setUser(i);
         setOpen(!open);
-        console.log(i);
-
     }
     return (
         <div>
@@ -55,14 +54,8 @@ const Header = () => {
             <div className='header-part'>
                 {
                     retailer_details.map((data) =>
-                        <div className='part'>
-                            <div className="part-header">
-                                <Avatar className='part-avatar' sx={{ bgcolor: 'white', color: '#000', fontWeight:'700'}}>
-                                    {data.name[0]}
-                                </Avatar>
-                                {data.name}, {data.address}
-                            </div>
-                        </div>)
+                        <DisplayRetailer data={data} key={data.id}/>
+                        )
                 }
             </div>
         </div>

@@ -5,12 +5,16 @@
 .box-header {
     display: flex;
     align-items: center;
-    padding: 5px;
+    padding: 5px 20px;
     border-bottom: lightslategray solid 1px;
     background-color: #333;
     color: white;
+    justify-content: space-between;
 }
-
+.box-header-left{
+    display: flex;
+    align-items: center;
+}
 .cus-name {
     font-size: 20px;
 }
@@ -25,5 +29,6 @@
 
 .cus-action {
     float: right;
-    padding: 20px;
+    display: flex;
+    align-items: center;
 }
