@@ -5,7 +5,7 @@ import { useForm, useFieldArray, Controller, useWatch } from 'react-hook-form';
 import AddIcon from '@mui/icons-material/Add';
 import DeleteIcon from '@mui/icons-material/Delete';
 import { listorder } from '../redux/Retailer/retailerSlice'
-import { handleClose, setOpen, props } from '../interfaces/backdrop'
+import { handleCloses, props } from '../interfaces/backdrop'
 import { Actiondetails } from '../interfaces/retailer'
 
 function PreviewBackdrop({ open, setOpen, user }: props) {
@@ -17,13 +17,11 @@ function PreviewBackdrop({ open, setOpen, user }: props) {
 
     let today = new Date().toLocaleDateString()
 
-    const { register, control, handleSubmit, watch, setValue, getValues, reset, formState: { errors } } = useForm({
+    const { register, control, handleSubmit, setValue, getValues, reset, formState: { errors } } = useForm({
         defaultValues: {
             data: [{ name: "", quantity: 1, price: 0, date: today }]
         }
     });
-
-    const watchResult = watch("data");
 
     const { fields, append, remove } = useFieldArray({
         control,
@@ -35,7 +33,7 @@ function PreviewBackdrop({ open, setOpen, user }: props) {
     const currentUser = retailer_details.find((users) => users.id === user);
     const dispatch = useAppDispatch();
 
-    const handleClose: handleClose = () => {
+    const handleClose: handleCloses = () => {
         reset({
             data: [{ name: "", quantity: 1, price: 0, date: today }]
         })
@@ -47,11 +45,11 @@ function PreviewBackdrop({ open, setOpen, user }: props) {
         name: 'data'
     });
 
-    interface datum {
+    interface Datum {
         data: []
     }
 
-    const onSubmit = (datum: datum | any) => {
+    const onSubmit = (datum: Datum | any) => {
         console.log('datum', datum);
 
         let reducerParam: Reducerparam = {
@@ -120,7 +118,7 @@ function PreviewBackdrop({ open, setOpen, user }: props) {
                                         <div className='content'>
                                             <p className='box-title'>Select Product</p>
                                             <Controller
-                                                render={({ ...field }) =>
+                                                render={({ ..._field }) =>
                                                     <Select
                                                         sx={{ minWidth: '100px', maxWidth: '150px' }}
                                                         {...register(`data.${index}.name`, { required: true })}

@@ -1,4 +1,4 @@
-export type handleClose = () => void
+export type handleCloses = () => void
 
 export type setOpen = (set: boolean) => void
 
