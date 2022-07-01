@@ -1,26 +1,34 @@
 .content {
+    line-height: 2;
     padding: 10px 20px;
 }
 
 .box-header {
+    // position: sticky;
+    position: --webkit-sticky;
+    top: 0;    
     display: flex;
     align-items: center;
     padding: 5px 20px;
-    border-bottom: lightslategray solid 1px;
     background-color: #333;
     color: white;
     justify-content: space-between;
 }
-.box-header-left{
+.scroll-design{
+    max-height: 300px;
+    overflow-y: auto;
+}
+.box-header-left {
     display: flex;
     align-items: center;
 }
+
 .cus-name {
     font-size: 20px;
 }
 
 .box-content {
-    padding: 20px;
+    padding: 10px;
     background-color: lightgray;
     display: flex;
     justify-content: space-between;
@@ -28,7 +36,20 @@
 }
 
 .cus-action {
+    // position: sticky;
+    position: --webkit-sticky;
+    bottom: 0;
     float: right;
     display: flex;
     align-items: center;
+}
+
+.box-unorder {
+    align-items: center;
+    
+}
+
+.display-form{
+    max-height: 50%;
+    overflow: auto;
 }

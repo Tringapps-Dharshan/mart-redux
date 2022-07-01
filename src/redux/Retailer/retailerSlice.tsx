@@ -1,33 +1,6 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit"
 import customer from '../../data/retailerData/customer.json'
-
-interface Product {
-    id: string,
-    name: string,
-    quantity: number,
-    date: Date
-}
-
-interface Actiondetails {
-    product: string;
-    quantity: number;
-    price: number;
-    date: Date
-}
-
-interface Initialstatetype {
-    retailerStock: {
-        id: number,
-        name: string,
-        products: Product[],
-        address: string
-    }[]
-}
-
-interface Actionpayload {
-    id: number,
-    details: Actiondetails[];
-}
+import {Initialstatetype, Actionpayload} from '../../interfaces/retailer'
 
 const initialState: Initialstatetype = {
     retailerStock : localStorage['customer'] ? JSON.parse(localStorage['customer']) : customer
@@ -46,6 +19,7 @@ const retailerSlice = createSlice({
             const data = action.payload.details
             const alterData = [...state.retailerStock];
             data.forEach((items:any)=>alterData.find((retailer)=>retailer.id===index)?.products.push(items)) 
+            console.log(data);
             localStorage['customer'] = JSON.stringify(alterData)
         }
     }

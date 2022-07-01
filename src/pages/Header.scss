@@ -1,6 +1,12 @@
 
 .header-part {
     display: flex;
+    background-color: lightcyan;
+}
+
+.part-header{
+    background-color: lightgoldenrodyellow;
+    padding: 20px;
 }
 
 .header-button {
@@ -16,3 +22,25 @@
     color: white;
 }
 
+.part {
+    height: 88.5vh;
+    width: 100vw;
+    background-color: ghostwhite;
+    border: 1px solid black;
+}
+
+.part-content{
+    align-items: center;
+    padding: 30px;
+    min-height: 71.7vh;
+    background-color: lightgray;
+}
+
+*{
+    margin: 0;
+}
+
+.no-product{
+    color: red;
+    font-size: large;
+}

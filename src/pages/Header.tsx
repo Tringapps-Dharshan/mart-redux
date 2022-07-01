@@ -1,9 +1,9 @@
 import { useState } from 'react'
 import { useAppSelector } from '../redux/hooks'
-import { Button } from '@mui/material'
+import { Button, Paper, Table, TableBody, TableCell, TableContainer, TableHead, TableRow } from '@mui/material'
 import './Header.scss'
 import PreviewBackdrop from '../sharedpages/PreviewBackdrop'
-import { DisplayRetailer } from './RetailerDetails/DisplayRetailer'
+
 interface Product {
     id: string,
     name: string,
@@ -53,9 +53,39 @@ const Header = () => {
             </div>
             <div className='header-part'>
                 {
-                    retailer_details.map((data) =>
-                        <DisplayRetailer data={data} key={data.id}/>
-                        )
+                    retailer_details.map((details) => (
+                        <div key={details.id} className='part'>
+                            <h2 className='part-header'>{details.name}, {details.address}.</h2>
+                            <div className='part-content'>
+                                {details.products.length === 0 ? <p className='no-product'>Have not purchased yet.</p> :
+                                    <TableContainer component={Paper} sx={{ margin: '8px', maxWidth: 500 }}>
+                                        <Table aria-label="simple table">
+                                            <TableHead sx={{ backgroundColor: 'lightskyblue' }}>
+                                                <TableRow>
+                                                    <TableCell>Products</TableCell>
+                                                    <TableCell align="center">Quantity</TableCell>
+                                                    <TableCell align="center">Date</TableCell>
+                                                </TableRow>
+                                            </TableHead>
+                                            <TableBody sx={{ backgroundColor: 'lightblue' }}>
+                                                {details.products.map((data) => (
+                                                    <TableRow
+                                                        key={data.id}
+                                                    >
+                                                        <TableCell component="th" scope="row">
+                                                            {data.name}
+                                                        </TableCell>
+                                                        <TableCell align="center">{data.quantity}</TableCell>
+                                                        <TableCell align="center">{data.date}</TableCell>
+                                                    </TableRow>
+                                                ))}
+                                            </TableBody>
+                                        </Table>
+                                    </TableContainer>
+                                }
+                            </div>
+                        </div>
+                    ))
                 }
             </div>
         </div>

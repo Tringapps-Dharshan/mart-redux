@@ -2,18 +2,60 @@
     "product_id": 1,
     "product_name": "Milk 1 Litre",
     "product_price": 48,
-    "product_inStock": 20
+    "product_inStock": 50
 },
 {
     "product_id": 2,
     "product_name": "Bread",
     "product_price": 30,
-    "product_inStock": 20
+    "product_inStock": 30
 },
 {
     "product_id": 3,
     "product_name": "Jam",
     "product_price": 20,
     "product_inStock": 20
+},
+{
+    "product_id": 4,
+    "product_name": "Egg 1 piece",
+    "product_price": 5,
+    "product_inStock": 100
+},
+{
+    "product_id": 5,
+    "product_name": "Butter",
+    "product_price": 50,
+    "product_inStock": 25
+},
+{
+    "product_id": 6,
+    "product_name": "Curd",
+    "product_price": 6,
+    "product_inStock": 20
+},
+{
+    "product_id": 7,
+    "product_name": "Candies",
+    "product_price": 35,
+    "product_inStock": 200
+},
+{
+    "product_id": 8,
+    "product_name": "Chips",
+    "product_price": 10,
+    "product_inStock": 100
+},
+{
+    "product_id": 9,
+    "product_name": "Oil 1 Litre",
+    "product_price": 120,
+    "product_inStock": 200
+},
+{
+    "product_id": 10,
+    "product_name": "Ice Cream",
+    "product_price": 20,
+    "product_inStock": 120
 }
 ]
